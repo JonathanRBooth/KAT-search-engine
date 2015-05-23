@@ -18,6 +18,8 @@ if filetypeselect == "yes":
     category = "%20category:"
 
 outputpath = raw_input("\n\nWhat would you like the savefile.txt to be named?: ") +".txt"
+
+timestart = time.time()
     
 def pages():
     url = "https://kat.cr/usearch/%s%s%s" %(search, category, filetype)
@@ -31,16 +33,15 @@ def pages():
     textblock = textblock.replace("</span>","")
 
     torrentamount = int(textblock)
-    pageamount = (torrentamount/25)
+    pageamount = (torrentamount/25) + 1
     return pageamount
 
 try:   
     pagenumber = pages()
-    print "\n", pagenumber + 1, "pages to scrape\n "
+    print "\n", pagenumber, "pages to scrape\n "
 
 
     for x in range(0, pagenumber + 1):
-        
         url = "https://kat.cr/usearch/%s%s%s/%s" %(search, category, filetype, x)
         print "\n Scraping page:", x, "\n"
         page = requests.get(url).content
@@ -61,8 +62,11 @@ try:
 
     print "\n All files found"
 
-    
+    timeend = time.time()
+    print "\n", pagenumber, "pages found in", timeend - timestart, "seconds"    
+
 except ValueError:
     print "No results found for search term"
+
 
 raw_input()
