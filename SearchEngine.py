@@ -13,6 +13,7 @@ print "Welcome to the KickAssTorrents Simple Search Engine!\n\n"
 
 search = raw_input("Insert search term: ")
 filetypeselect = raw_input("\nWould you like to filter by file type? yes/no: ")
+filetypeselect = filetypeselect.lower()
 if filetypeselect == "yes":
     filetype = raw_input("\nWhich file type would you like to filter for?: \n Movies \n TV \n Music \n Books \n Games \n Apps \n XXX \n\n")
     filetype = filetype.lower()
