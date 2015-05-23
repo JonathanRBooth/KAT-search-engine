@@ -63,7 +63,7 @@ try:
     print "\n All files found"
 
     timeend = time.time()
-    print "\n", pagenumber, "pages found in", timeend - timestart, "seconds"    
+    print "\n", pagenumber, "pages scraped in", timeend - timestart, "seconds"    
 
 except ValueError:
     print "No results found for search term"
