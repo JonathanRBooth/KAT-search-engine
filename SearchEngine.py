@@ -15,6 +15,7 @@ search = raw_input("Insert search term: ")
 filetypeselect = raw_input("\nWould you like to filter by file type? yes/no: ")
 if filetypeselect == "yes":
     filetype = raw_input("\nWhich file type would you like to filter for?: \n Movies \n TV \n Music \n Books \n Games \n Apps \n XXX \n\n")
+    filetype = filetype.lower()
     category = "%20category:"
 
 outputpath = raw_input("\n\nWhat would you like the savefile.txt to be named?: ") +".txt"
